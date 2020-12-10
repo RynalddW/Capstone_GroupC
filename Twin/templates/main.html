@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Flask App</title>
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">	
+	  <style>
+body {
+  background-image: url("https://static.wixstatic.com/media/1b17ad_e032a1a62a1a4e928a76cffbaf06d9df~mv2.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+ background-position: top;
+}
+</style>
+</head>
+   <body class='bg-dark'>
+   
+    <div id="predict" class="text-center row p-2 justify-content-center">
+      <div class="col-12 mb-1">
+        <h2 style="color: #c7d7e2"> Drillbit Performance - Capstone Group-C </h2>
+      </div>
+      <div class="col-2">
+        <div class="row justify-content-around">
+          <div class=' border col-4 p-1 rounded' style="background-color: #c7d7e2">
+            <a href="/dashapp" style="color: #333333"><strong>Dashboard</strong></a>
+          </div>
+          <div class=' border col-4 p-1 rounded' style="background-color: #c7d7e2">
+			  <a href="/modelo" style="color: #333333"><strong>Model</strong></a>
+          </div>
+
+          
+            <title>Drill_bit_performance</title>
+        <form action="{{ url_for('main') }}" method="POST">
+
+    <fieldset>
+  <!--      <legend>Input values:</legend> -->
+        <br>
+        <br>
+        <h4 style="color: #c7d7e2"> Please Input Values for prediction </h4>
+        <br>
+        <h6 style="color: #c7d7e2"> Torque (Range: 0 - 47)</h6>
+        <input name="torque" type="number" required>
+        <br>
+        <br>
+        <h6 style="color: #c7d7e2"> Temperature (Range: 0 - 10000) </h6>
+        <input name="temperature" type="number" required>
+        <br>
+        <br>
+        <h6 style="color: #c7d7e2"> Weight on Bit  (Range: 0 - 40) </h6>
+        <input name="weight_on_bit" type="number" required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+    <br>
+    <br>
+      
+
+<div class="result" align="center">
+    {% if result %}
+        <br>
+        <br>
+        <h4 style="color: #c7d7e2"> Received inputs </h4>
+        {% for variable, value in original_input.items() %}
+            <b style="color: #c7d7e2"> {{ variable }} : {{ value }} </b>
+            <br>
+        {% endfor %}
+        <br>
+        <b style="color: #c7d7e2"> Predicted Rate of Penetration m/hour: </b>
+           <p style="color: #c7d7e2">{{ result }}</p>
+    {% endif %}
+</div>
+</html>

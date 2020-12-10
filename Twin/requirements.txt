@@ -1,0 +1,14 @@
+flask
+pandas
+gunicorn
+xgboost
+passlib
+Werkzeug
+gevent
+sklearn
+dash
+dash_core_components
+dash_html_components
+plotly-express
+requests
+dashboard
