@@ -7,4 +7,4 @@ test API call with CURL:
 curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -i "http://127.0.0.1:5001/twin" --data "torque=1234&temperature=23&weight_on_bit=34"
 curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -i "http://127.0.0.1:5000/api" --data "torque=1234&temperature=23&weight_on_bit=34"
 
-Alternatively test with RESTclient or similar browser plugin 
+Alternatively test with RESTclient or similar browser plugin  
